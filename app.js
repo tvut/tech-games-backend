@@ -1,7 +1,11 @@
+require('dotenv').config();
+
 var express = require("express");
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var app = express();
+
+const PORT = process.env.PORT || 8080
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -245,6 +249,6 @@ var songs = [
     }
   });
 
-app.listen(3000, () => {
-    console.log(`Success! Your application is running on port 3000.`);
+app.listen(PORT, () => {
+    console.log(`Success! Your application is running on port ${PORT}.`);
 });
